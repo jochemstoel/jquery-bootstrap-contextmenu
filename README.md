@@ -18,9 +18,10 @@ Open demo.html to see it in action.
 
 ```javascript
 $('#myelement').contextmenu('#mymenu1', function(clicked, selected) {
-	var class = clicked.attr('class');
-	var message = "the class attribute of the element you clicked on is '" + class "'!";
+	var message = "You right clicked on the text '" + clicked.text() + "'' and selected option '" + selected.text() + "' in the menu";
 	alert(message);
-	}	
 });
 ```
+
+And if you like it, share it! =)
+
