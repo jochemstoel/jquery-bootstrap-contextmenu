@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Demo</title>
+		<!-- Bootstrap / jQuery -->
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+		<!-- The plugin -->
+		<script type="text/javascript" src="jquery.context.min.js"></script>
+	</head>
+	<body>
+	<div class="container">
+	<h1>Demo</h1>
+	I will not add more examples. This should be sufficient. After all it is a tiny plugin and is not supposed to have a lot features.
+		<h3>Demo #1 (the menu)</h3>
+		Assign a contextmenu to a page element.
+		<div id="demo1" class="well">
+			<p>Right click here.</p>
+		</div>
+		<pre><code>
+$('#demo1').contextmenu('#mymenu1', function(clicked, selected) {
+	var message = "You right clicked on the text '" + clicked.text() + "'' and selected option '" + selected.text() + "' in the menu";
+	alert(message);
+});
+		</code></pre>
+		<h3>Demo #2 (the callback)</h3>
+		Access jQuery methods such as attr() and html() of the clicked element and selected menu item.
+		<div id="demo2" class="well">
+			Right click on this div and select menu item. <b class="myclassname">Then try again and click on this text!</b>
+		</div>
+		<pre><code>
+$('#demo2').contextmenu('#mymenu2', function(clicked, selected) {
+	var class = clicked.attr('class');
+	var message = "the class attribute of the element you clicked on is '" + class "'!";
+	alert(message);
+	}	
+});
+		</code></pre>
+		<h3>Demo #3 (other elements)</h3>
+		This plugin is created to show bootstrap dropdown menu but you are not limited to using dropdown lists. Here is a simple example using a div with iframe.
+		<div id="demo3" class="well">
+			<p>Right click here..</p>
+		</div>
+		<pre><code>
+$('#demo3').contextmenu('#mymenu3', function(clicked, selected) {
+	//
+});
+		</code></pre>
+	</div>
+
+	<ul class="dropdown-menu" id="mymenu1">
+			<li><a href="#">Action</a></li>
+			<li><a href="#">Another action</a></li>
+			<li><a href="#">Something else here</a></li>
+	</ul>
+
+	<ul class="dropdown-menu" id="mymenu2">
+			<li><a href="#">Edit</a></li>
+			<li><a href="#">Delete</a></li>
+			<li><a href="#">Duplicate</a></li>
+	</ul>
+
+	<div id="mymenu3">
+		<iframe src="http://example.com/" style="width: 400px; height: 200px;"></iframe>	
+	</div>
+	<script>
+	/* Demo #1 */
+	$('#demo1').contextmenu('#mymenu1', function(clicked, selected) {
+		var message = "You right clicked on the text '" + clicked.text() + "'' and selected option '" + selected.text() + "' in the menu";
+		alert(message);
+	});
+
+	$('#demo2').contextmenu('#mymenu2', function(clicked, selected) {
+		var classname = clicked.attr('class');
+		var message = "the class attribute of the element you clicked on is '" + classname + "'!";
+		alert(message);
+	});
+
+	$('#demo3').contextmenu('#mymenu3', function(clicked, selected) {
+		//
+	});
+	</script>
+	</body>
+</html>
