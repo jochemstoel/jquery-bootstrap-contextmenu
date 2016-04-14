@@ -1,0 +1,6 @@
+{
+  "name": "Jquery Bootstrap ContextMenu",
+  "tagline": "Tiny right-mouseclick contextmenu for jQuery / Bootstrap.",
+  "body": "# jquery-bootstrap-contextmenu\r\nThis is a tiny lightweight right-mouseclick contextmenu for jQuery / Bootstrap without all the unnecessary features. The minified version is only 554 bytes in size. It also allows you to show other elements such as div or iframe on right click.\r\n\r\n## How to use:\r\nOpen demo.html to see it in action.\r\n\r\n### The HTML:\r\n```html\r\n<ul class=\"dropdown-menu\" id=\"mymenu1\">\r\n\t<li><a href=\"#\">Action</a></li>\r\n\t<li><a href=\"#\">Another action</a></li>\r\n\t<li><a href=\"#\">Something else here</a></li>\r\n\t<li><a href=\"#\">Separated link</a></li>\r\n</ul>\r\n```\r\n\r\n### The Javascript:\r\n\r\n```javascript\r\n$('#myelement').contextmenu('#mymenu1', function(clicked, selected) {\r\n\tvar message = \"You right clicked on the text '\" + clicked.text() + \"'' and selected option '\" + selected.text() + \"' in the menu\";\r\n\talert(message);\r\n});\r\n```\r\n\r\nAnd if you like it, share it! =)\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
